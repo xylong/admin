@@ -6,13 +6,23 @@ import Login from '@/pages/login/Login'
 Vue.use(Router)
 
 export default new Router({
+    mode: 'history',
+    linkActiveClass: 'router-link-active',
+    linkExactActiveClass: 'router-link-exact-active',
+    scrollBehavior (to, from, savedPosition) {
+        return savedPosition || { x: 0, y: 0 }
+    },
     routes: [{
         path: '/',
-        name: 'Todo',
+        name: 'todo',
         component: Todo
     }, {
         path: '/login',
-        name: 'Login',
-        component: Login
+        name: 'login',
+        component: Login,
+        meta: {
+            title: 'login',
+            describe: 'this is login page'
+        }
     }]
 })

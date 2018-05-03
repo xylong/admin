@@ -1,8 +1,9 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app">
+        <router-link :to="{name: 'todo'}">index</router-link>
+        <router-link :to="{name: 'login'}">login</router-link>
+        <router-view/>
+    </div>
 </template>
 
 <script>
